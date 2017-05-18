@@ -1,61 +1,53 @@
-##Not sure if that is right for section heading
+# Not sure if that is right for section heading
 
-- key: Section 9	
-  title: “Eating Disorders“
-  description: 
+- key: 9.section
+  title: Eating Disorders
+  description:
+  input: integer
+  validate: [0-999]
+
+- key: 9.001
+  title: Calculate Body Mass Index (BMI) from item 8.001 and 8.002 of Section 8
+  description:
   input: integer
   options:
   validate: [0-999]
-  glossary: Section 9 
-  help: 
-
-- key: 9.001	
-  title: "Calculate Body Mass Index (BMI) from item 8.001 and 8.002 of Section 8"
-  description: 
-  input: integer
-  options:
-  validate: [0-999]
-  glossary: 9.001
   help: If measuring equipment is unavailable, proceed to item 9.003.
 
 - key: 9.002
-  title: "Waist circumference in centimeters"
+  title: Waist circumference in centimeters
   description: |
     What is your waist circumference now?
+
     How tall do you think you are?
+
     [2.5 cms = 1 inch].
   input: integer
-  options:
   validate: [0-999]
-  glossary: 9.002
-  help: 
 
 - key: 9.003
-  title: "Observed appearance of R"
+  title: Observed appearance of R
   description: |
     Does R appear to be thin or have a BMI < 18.5kg/m2?
   input: integer
   options:
-  0: No
-  1: Yes
+    0: No
+    1: Yes
   validate: [0-1]
-  glossary: 9.003
-  help: 
 
 - key: 9.004
-  title: "Previous contact with professionals or others"
+  title: Previous contact with professionals or others
   description: |
-    Have you ever received advice from professionals or others with regard to your weight, diet or nutrition?
+    Have you ever received advice from professionals or others with regard to
+    your weight, diet or nutrition?
   input: integer
   options:
-  0: No
-  1: Yes
+    0: No
+    1: Yes
   validate: [0-1]
-  glossary: 9.004
-  help: 
 
 - key: 9.005
-  title: "SCOFF questionnaire"
+  title: SCOFF questionnaire
   description: |
     Do you make yourself sick because you feel uncomfortably full?
     -	Do you worry you have lost control over how much you eat?
@@ -72,73 +64,90 @@
     4: 4 items endorsed.
     5: 5 items endorsed.
   validate: [0-5]
-  glossary: 9.005
-  help: 
 
 - key: 9.006
-  title: "Attitude toward body shape and/or weight"
+  title: Attitude toward body shape and/or weight
   description: |
-    	Are you satisfied with the shape of your body – how it looks to you? With your weight?
-    -	Has either of these ever been a concern for you?  (If yes, when?)
-    -	Has anyone ever expressed concern abut your weight or eating habit?
-    -	In what ways?
-      input: integer
+    - Are you satisfied with the shape of your body – how it looks to you? With
+      your weight?
+    - Has either of these ever been a concern for you?  (If yes, when?)
+    - Has anyone ever expressed concern abut your weight or eating habit?
+    - In what ways?
+  input: integer
   options:
     0: R and others have shown minimal or no concern
-    1: R has been concerned that certain body part(s) such as buttocks, abdomen is/are “too fat/large”.
-    2: R has been concerned enough to have considered taking action to lose weight (e.g. exercise) or to avoid gaining weight (e.g. dieting), but not 3.
+    1: R has been concerned that certain body part(s) such as buttocks, abdomen
+       is/are “too fat/large”.
+    2: R has been concerned enough to have considered taking action to lose
+       weight (e.g. exercise) or to avoid gaining weight (e.g. dieting), but
+       not 3.
     3: R has been preoccupied and/or worried  about body shape or weight.
     4: R has had intense fear of gaining weight or becoming fat.
-    validate: [0-4]
-    glossary: 9.006
-    help: CUT OFF => to 10.001 if BMI > 18.5 kg/m2 or R does not appear thin or has never received help for eating/dieting and shows no concern toward body shape and/or weight, skip to 9.014.
-      Otherwise, proceed to 9.007.  
+  validate: [0-4]
+  help: |
+    CUT OFF => to 10.001 if BMI > 18.5 kg/m2 or R does not appear thin or has
+    never received help for eating/dieting and shows no concern toward body
+    shape and/or weight, skip to 9.014.
+
+    Otherwise, proceed to 9.007.
 
 - key: 9.007
-  title: "Misperception of body shape and/or weight"
+  title: Misperception of body shape and/or weight
   description: |
     What do you think about your body shape? About your weight?
-    -	What are your feelings about your body shape? About your weight?
-    -	Have you ever worried that you are too heavy or weighed more than you should?
-    -	Have you ever had a weight problem?
-      input: integer
+    - What are your feelings about your body shape? About your weight?
+    - Have you ever worried that you are too heavy or weighed more than you should?
+    - Have you ever had a weight problem?
+  input: integer
   options:
     0: No distortion of self-perception of body shape and/or weight.
-    1: 1	No distorted self-perception of body shape or weight, but R is dissatisfied nonetheless.
-    2: R accepts that (s)he has low body weight, but cannot help but feel fat or overweight despite objective evidence to the contrary.
-    3: R does not accept that (s)he is underweight and/or perceives self as fat or not thin enough despite objective evidence to the contrary. For example, BMI < 18.5kg/m2, wearing small or children’s clothes sizes etc.
+    1: No distorted self-perception of body shape or weight, but R is
+       dissatisfied nonetheless.
+    2: R accepts that (s)he has low body weight, but cannot help but feel fat or
+       overweight despite objective evidence to the contrary.
+    3: R does not accept that (s)he is underweight and/or perceives self as fat
+       or not thin enough despite objective evidence to the contrary. For
+       example, BMI < 18.5kg/m2, wearing small or children’s clothes sizes etc.
   validate: [0-3]
-  glossary: 9.007
-  help: 
 
 - key: 9.008
-  title: "Restrictive behaviours"
+  title: Restrictive behaviours
   description: |
     Please can you tell me what you ate yesterday.
-    -	Do you restrict the amount of food that you eat?
-    -	Do you avoid certain type of food?  What type, such as carbohydrates?
-    -	Do you follow a healthy diet? Explain what you mean by that.
-    -	Do you count calories?
-    -	Do you ever skip meals?
-    -	Have you ever done anything to avoid gaining weight?
-    -	In what ways (dieting, fasting, exercise)?  How often?
-    -	Do you experience a lack of interest in eating?
-    -	Do you avoid certain food because of its sensory characteristics, such as smell, taste, appearance, texture, colour, temperature?
-    -	Do you avoid eating because that you may choke/vomit after eating?
-      input: integer
+    - Do you restrict the amount of food that you eat?
+    - Do you avoid certain type of food?  What type, such as carbohydrates?
+    - Do you follow a healthy diet? Explain what you mean by that.
+    - Do you count calories?
+    - Do you ever skip meals?
+    - Have you ever done anything to avoid gaining weight?
+    - In what ways (dieting, fasting, exercise)?  How often?
+    - Do you experience a lack of interest in eating?
+    - Do you avoid certain food because of its sensory characteristics, such as
+      smell, taste, appearance, texture, colour, temperature?
+    - Do you avoid eating because that you may choke/vomit after eating?
+  input: integer
   options:
     0: None
     1: R has narrowed eating repertoire but not 2.
     2: R has narrowed eating repertoire and their dietary intake no longer meets their energy or nutritional requirements.
   validate: [0-2]
-  glossary: 9.008
-  help: R has employed dieting, fasting, use of appetite suppressants, stimulants, or other chemicals etc. to restrict caloric intake. Include excessive exercise or the use of medication (e.g. thyroxine, insulin) or other activities to compensate for calories already consumed.  
-    Exclude purging behaviours that are rated separately in item 9.011.  Rate as present if R has engaged in these activities at least once weekly on average for a month or longer.
+  help: |
+    R has employed dieting, fasting, use of appetite suppressants, stimulants,
+    or other chemicals etc. to restrict caloric intake. Include excessive
+    exercise or the use of medication (e.g. thyroxine, insulin) or other
+    activities to compensate for calories already consumed.
+
+    Exclude purging behaviours that are rated separately in item 9.011.
+
+    Rate as present if R has engaged in these activities at least once weekly on
+    average for a month or longer.
+
     CUT OFF => to 9.011	if restrictive behaviours are absent (0).
-	  If restrictive behaviour is present (1/2), proceed to 9.009.
+
+    If restrictive behaviour is present (1/2), proceed to 9.009.
 
 - key: 9.009
-  title: "Frequency of restrictive behaviours"
+  title: Frequency of restrictive behaviours
   description: |
    How often do you restrict your diet?
   input: integer
@@ -152,11 +161,9 @@
     6: Eight to thirteen times weekly on average
     7: Fourteen times weekly or more on average
   validate: [0-7]
-  glossary: 9.009
-  help: 
 
 - key: 9.010
-  title: "Duration of restrictive behaviours"
+  title: Duration of restrictive behaviours
   description: |
    For how long have you restricted your diet?
   input: integer
@@ -170,26 +177,27 @@
     6: 6 consecutive months or more
     7: Not within the past 6 months but present in the past
   validate: [0-7]
-  glossary: 9.010
-  help:
 
 - key: 9.011
-  title: "Purging behaviours to prevent weight gain"
+  title: Purging behaviours to prevent weight gain
   description: |
-    Other than dieting or exercise, have you ever done anything to stop gaining weight?
-      -	In what ways (self-induced vomiting, laxatives/diuretics/enema misuse)?
-      -	How frequent?
+    Other than dieting or exercise, have you ever done anything to stop gaining
+    weight?
+
+    - In what ways (self-induced vomiting, laxatives/diuretics/enema misuse)?
+    - How frequent?
   input: integer
   options:
     0: No
     1: Yes
   validate: [0-1]
-  glossary: 9.011
-  help: CUT OFF => to 9.014	if purging behaviours are absent (0).
-	If purging behaviour is present (1/2), proceed to 9.012
+  help: |
+    CUT OFF => to 9.014	if purging behaviours are absent (0).
+    
+    If purging behaviour is present (1/2), proceed to 9.012
 
 - key: 9.012
-  title: "Frequency of purging behaviours"
+  title: Frequency of purging behaviours
   description: |
    How often do you use [the method]?
   input: integer
@@ -203,11 +211,10 @@
     6: Eight to thirteen times weekly on average
     7: Fourteen times weekly or more on average
   validate: [0-7]
-  glossary: 9.012
-  help: 
+  help:
 
 - key: 9.013
-  title: "Duration of purging behaviours"
+  title: Duration of purging behaviours
   description: |
    For how long have you used [this method]?
   input: integer
@@ -221,32 +228,39 @@
     6: 6 consecutive months or more
     7: Not within the past 6 months but present in the past
   validate: [0-7]
-  glossary: 9.013
   help:
 
 - key: 9.014
-  title: "Uncontrolled overeating"
+  title: Uncontrolled overeating
   description: |
     Have you ever thought that you have lost/may lose control of your eating?
-    -	In what ways?
-    -	How frequent?
-    -	How long?
-      input: integer
+    - In what ways?
+    - How frequent?
+    - How long?
+  input: integer
   options:
     0: None
     1: R has engaged in uncontrolled overeating but not 2.
     2: R has engaged in an eating binge.
   validate: [0-2]
-  glossary: 9.014
-  help: An eating binge is defined as the uncontrolled consumption of a significantly larger amount of food (e.g. >2,000kcal) in a short period of time (e.g. approximately 2 hours or less), compared to R’s typical meal under similar circumstance.  
-        R may not report a loss of control if the behaviour has become repeated and is habituated.  Rate as present if R has engaged in these activities at least once weekly on average for a month or longer.
-        CUT OFF => to 9.021	if uncontrolled eating is absent (0).
-	      If uncontrolled eating is present (1/2), proceed to 9.015.
+  help: |
+    An eating binge is defined as the uncontrolled consumption of a
+    significantly larger amount of food (e.g. >2,000kcal) in a short period of
+    time (e.g. approximately 2 hours or less), compared to R’s typical meal
+    under similar circumstance.
+    
+    R may not report a loss of control if the behaviour has become repeated and
+    is habituated.  Rate as present if R has engaged in these activities at
+    least once weekly on average for a month or longer.
+    
+    CUT OFF => to 9.021	if uncontrolled eating is absent (0).
+
+    If uncontrolled eating is present (1/2), proceed to 9.015.
 
 - key: 9.015
-  title: "Frequency of uncontrolled overeating"
+  title: Frequency of uncontrolled overeating
   description: |
-   How often do you have a eating binge?
+   How often do you have an eating binge?
   input: integer
   options:
     0: Absence
@@ -258,11 +272,9 @@
     6: Eight to thirteen times weekly on average
     7: Fourteen times weekly or more on average
   validate: [0-7]
-  glossary: 9.015
-  help: 
 
 - key: 9.016
-  title: "Duration of Uncontrolled overeating"
+  title: Duration of Uncontrolled overeating
   description: |
    For how long have you experienced loss of control with your eating?
   input: integer
@@ -276,87 +288,63 @@
     6: 6 consecutive months or more
     7: Not within the past 6 months but present in the past
   validate: [0-7]
-  glossary: 9.016
-  help:
 
-##Not sure what to do with this one.
-- key: 
-  title: ""
-  description: |
-    During an eating binge, do you:
-
-    Rate item 9.016-9.019.
-    0 No.
-    1	Yes.
-  input: 
-  options:
-  validate: 
-  glossary: 
-  help:
+# possible workaround
 
 - key: 9.016
-  title: "Eat much more rapidly that normal"
-  description: 
-  input: integer
-  options:
-    0: No
-    1: Yes
-  validate: [0-1]
-  glossary: 9.016
-  help:
-
-- key: 9.017
-  title: "Eat until feeling uncomfortably full"
-  description: 
-  input: integer
-  options:
-    0: No
-    1: Yes
-  validate: [0-1]
-  glossary: 9.017
-  help:
-
-- key: 9.018
-  title: "Eat large amounts of food when not feeling physically hungry"
-  description: 
-  input: integer
-  options:
-    0: No
-    1: Yes
-  validate: [0-1]
-  glossary: 9.018
-  help:
-
-- key: 9.019
-  title: "Eat alone because of feeling embarrassed by how much you are eating"
-  description: 
-  input: integer
-  options:
-    0: No
-    1: Yes
-  validate: [0-1]
-  glossary: 9.019
-  help:
-
-  - key: 
-  title: ""
+  title: Eating binges
   description: |
     During an eating binge, do you:
 
-    Rate item 9.20.
-    0 No
-    1 Mild distress
-    2	Moderate distress
-    3	Severe distress
-  input: 
+    Eat much more rapidly than normal
+  input: integer
   options:
-  validate: 
-  glossary: 
-  help:
+    0: No
+    1: Yes
+  validate: [0-1]
+
+- key: 9.017
+  title: Eating binges
+  description: |
+    During an eating binge, do you:
+      
+    Eat until feeling uncomfortably full
+  input: integer
+  options:
+    0: No
+    1: Yes
+  validate: [0-1]
+
+- key: 9.018
+  title: Eating binges
+  description: |
+    During an eating binge, do you:
+      
+    Eat large amounts of food when not feeling physically hungry
+  input: integer
+  options:
+    0: No
+    1: Yes
+  validate: [0-1]
+
+- key: 9.019
+  title: Eating binges
+  description: |
+    During an eating binge, do you:
+      
+    Eat alone because of feeling embarrassed by how much you are eating
+  input: integer
+  options:
+    0: No
+    1: Yes
+  validate: [0-1]
 
 - key: 9.020
-  title: "Feel regret, guilt, depressed or disgusted with oneself"
-  description: 
+  title: Eating binges
+  description: |
+    During an eating binge, do you:
+      
+    Feel regret, guilt, depressed or disgusted with oneself
   input: integer
   options:
     0: No
@@ -364,14 +352,14 @@
     2: Moderate distress
     3: Severe distress
   validate: [0-3]
-  glossary: 9.020
-  help:
 
 - key: 9.021
-  title: "Change in endocrine function"
+  title: Change in endocrine function
   description: |
     Have you missed any periods while you were keeping your weight down?
-      - How many?
+
+    - How many?
+    
     Vaginal bleeding in anorexic women on replacement hormone therapy or the contraceptive pill is rated 8.
   input: integer
   options:
@@ -382,182 +370,129 @@
     8: Uncertain.
     9: Postmenopausal.
   validate: [0-3, 8, 9]
-  glossary: 9.021
-  help:
 
- - key: 
-  title: "HISTORY ITEMS"
+- key: 9.022.section
+  title: HISTORY ITEMS
   description: |
     Review any positive items: 9.001 - 9.021.
 
-    -	When did these present problems begin?
-    -	When was the first time you became concerned about these problems?
-    -	How old were you then?
-    -	And how did the problem develop?
-    -	So you were about ...  years old?
-  input: 
-  options:
-  validate: 
-  glossary: 
-  help: Enter ages at 9.022 - 9.026.  Record duration of present episode at 9.028 - 9.030.
+    - When did these present problems begin?
+    - When was the first time you became concerned about these problems?
+    - How old were you then?
+    - And how did the problem develop?
+    - So you were about ... years old?
+  help: |
+    Enter ages at 9.022 - 9.026.  Record duration of present episode at 
+    9.028 - 9.030.
 
- - key: 9.022
-  title: "Age present episode of restrictive behaviours started"
-  description: 
+- key: 9.022
+  title: Age present episode of restrictive behaviours started
   input: integer
-  options:
   validate: [0-999]
-  glossary: 9.022
-  help: 
 
- - key: 9.023
-  title: "Age present episode of purging behaviours started"
-  description: 
+- key: 9.023
+  title: Age present episode of purging behaviours started
   input: integer
-  options:
   validate: [0-999]
-  glossary: 9.023
-  help: 
 
- - key: 9.024
-  title: "Age present episode of uncontrolled overeating started"
-  description: 
+- key: 9.024
+  title: Age present episode of uncontrolled overeating started
   input: integer
-  options:
   validate: [0-999]
-  glossary: 9.024
-  help: 
 
- - key: 9.025
-  title: "Age at first onset of restrictive behaviours"
-  description: 
+- key: 9.025
+  title: Age at first onset of restrictive behaviours
   input: integer
-  options:
   validate: [0-999]
-  glossary: 9.025
-  help: 
 
- - key: 9.026
-  title: "Age at first onset of purging behaviours"
-  description: 
+- key: 9.026
+  title: Age at first onset of purging behaviours
   input: integer
-  options:
   validate: [0-999]
-  glossary: 9.026
-  help: 
 
- - key: 9.027
-  title: "	Age at first onset of uncontrolled overeating"
-  description: 
+- key: 9.027
+  title: Age at first onset of uncontrolled overeating
+  description:
   input: integer
-  options:
   validate: [0-999]
-  glossary: 9.027
-  help: 
 
-##not sure of the validate for dates
- - key: 9.028
-  title: "Dates of present episode of restrictive behaviours"
-  description: 
-  input: dates
-  options:
-  validate: [0-999]
-  glossary: 9.028
-  help:   
+- key: 9.028
+  title: Dates of present episode of restrictive behaviours
+  input: date_interval
 
- - key: 9.029
-  title: "Dates of present episode of purging behaviours"
-  description: 
-  input: dates
-  options:
+- key: 9.029
+  title: Dates of present episode of purging behaviours
+  input: date_interval
   validate: [0-999]
-  glossary: 9.029
-  help:   
 
- - key: 9.030
-  title: "Dates of present episode of uncontrolled overeating"
-  description: 
-  input: dates
-  options:
+- key: 9.030
+  title: Dates of present episode of uncontrolled overeating
+  input: date_interval
   validate: [0-999]
-  glossary: 9.030
-  help:  
 
 - key: 9.031
-  title: "Relation of uncontrolled overeating and/or purging behaviours to restrictive behaviours"
-  description: 
+  title: Relation of uncontrolled overeating and/or purging behaviours to
+         restrictive behaviours
   input: integer
   options:
-  0: Uncontrolled eating and/or purging behaviours absent or present only during restrictive behaviours.
-  1: Uncontrolled eating and/or purging behaviours present at other times.
+    0: Uncontrolled eating and/or purging behaviours absent or present only
+       during restrictive behaviours.
+    1: Uncontrolled eating and/or purging behaviours present at other times.
   validate: [0-1]
-  glossary: 9.031
-  help: SKIP TO => to 9.035 if a previous episode is not rated. 
-    If earlier episode(s) is rated, give date-
- 
- - key: 9.032
-  title: "Dates of earlier episode of restrictive behaviours"
-  description: 
-  input: datesinterval
-  options:
-  validate: [0-999]
-  glossary: 9.032
-  help:  
-
- - key: 9.033
-  title: "Dates of earlier episode of purging behaviours"
-  description: 
-  input: datesinterval
-  options:
-  validate: [0-999]
-  glossary: 9.033
-  help:  
+  help: |
+    SKIP TO => to 9.035 if a previous episode is not rated.
     
- - key: 9.034
-  title: "Dates of earlier episode of uncontrolled eating"
-  description: 
-  input: datesinterval
-  options:
-  validate: [0-999]
-  glossary: 9.034
-  help:  
+    If earlier episode(s) is rated, give date-
 
- - key: 9.035
-  title: "Interference with activities due to Section 9 symptoms"
+- key: 9.032
+  title: Dates of earlier episode of restrictive behaviours
+  input: date_interval
+
+- key: 9.033
+  title: Dates of earlier episode of purging behaviours
+  input: date_interval
+
+- key: 9.034
+  title: Dates of earlier episode of uncontrolled eating
+  input: date_interval
+
+- key: 9.035
+  title: Interference with activities due to Section 9 symptoms
   description: |
     You have mentioned [summarize symptoms] during PERIOD.
-    Overall, how much interference has there been with your everyday activities because of these problems?
-    Rate interference due to symptoms in Section 9.  
-  input: integre
+    Overall, how much interference has there been with your everyday activities
+    because of these problems?
+    
+    Rate interference due to symptoms in Section 9.
+  input: integer
   options:
     0: No Section 9 symptoms present in significant degree.
     1: Symptom/s present but little interference.
     2: Moderate or intermittent interference.
     3: Severe to incapacitating interference.
   validate: [0-3]
-  glossary: 9.035
-  help: Rate attribution of physical cause (including alcohol, drugs, medical condition, etc) of Section 9 symptoms using attributional scale option for individual items or below at syndrome level.
+  help: |
+    Rate attribution of physical cause (including alcohol, drugs, medical
+    condition, etc) of Section 9 symptoms using attributional scale option for
+    individual items or below at syndrome level.
 
- - key: 9.036
-  title: "Organic cause of Section 9 symptoms"
+- key: 9.036
+  title: Organic cause of Section 9 symptoms
   description: |
-   Use the four criteria listed in Section 13.
-  input: integre
+    Use the four criteria listed in Section 13.
+  input: integer
   options:
     0: Absent.
     1: Probable organic cause; not fully confirmed.
     2: Definite; confirmed by expert investigation.
     8: Uncertain whether organic or not.
-  validate: [0-2, 8]
-  glossary: 9.036
-  help:
+  validate: [0-2,8]
 
- - key: 9.037
-  title: "Identify organic cause of Section 9 symptoms"
+- key: 9.037
+  title: Identify organic cause of Section 9 symptoms
   description: |
-   For identifiable causes, enter ICD-10 chapter letter and up to 4 digits. If none leave blank. If two periods are rated, use top row boxes for the first period (PS) and the bottom row for the second period (RE or LB). Organic cause may also be rated with the attributional scale at the item level.
-  input:
-  options:
+   For identifiable causes, enter ICD-10 chapter letter and up to 4 digits. If
+   none leave blank. If two periods are rated, use top row boxes for the first
+   period (PS) and the bottom row for the second period (RE or LB). Organic
+   cause may also be rated with the attributional scale at the item level.
   validate: [0-9999]
-  glossary: 9.037
-  help:
